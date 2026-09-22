@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="https://yundandan.cc/assets/theme/viewer.css">
 <link rel="stylesheet" href="https://yundandan.cc/assets/theme/reader.css">
 <link rel="icon" href="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
-
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/artalk.css"><script defer src="https://yundandan.cc/assets/theme/artalk.js"></script>
 <script defer src="https://yundandan.cc/assets/theme/theme.js"></script>
 <script defer src="https://yundandan.cc/assets/theme/reader.js"></script>
 <script defer src="https://yundandan.cc/assets/theme/viewer.js"></script>
@@ -80,7 +80,7 @@
 <header class="article-header">
 <div class="eyebrow" data-pagefind-ignore>阅读时光</div>
 <h1 data-pagefind-meta="title">同一台电脑Chrome能用，Firefox不能用？先检查浏览器代理来源</h1>
-<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-22T12:22:04&#43;08:00">2026-09-22</time></div>
+<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-22T12:22:04&#43;08:00">2026-09-22</time><span><span id="page-views">—</span> 次阅读</span></div>
 <div class="chips" data-pagefind-ignore><a href="https://yundandan.cc/categories/clients/">客户端</a></div>
 </header>
 <div class="prose"><p>同一台电脑、同一个网络，Chrome能访问某个目标，Firefox却失败，这个对照能缩小范围，但还不能直接证明Firefox坏了。两个浏览器可能采用不同的代理来源，也可能有不同的账号、缓存和扩展状态。</p>
@@ -125,10 +125,15 @@
 <p>打开首页只是起点。根据自己的用途完成登录、内容加载或一次互动，确认目标任务恢复，而不是仅有一个页面偶然打开。</p>
 <p>这类问题不适合用“换一家机场就一定好”来解释。先确认浏览器代理来源，能帮助你把客户端、浏览器和目标服务分开判断，也能让后续机场推荐比较更公平。</p>
 </div>
-
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
 <div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/troubleshooting/"># 故障排查</a><a href="https://yundandan.cc/tags/routing/"># 代理分流</a></div>
 <nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/capture-versus-routing/">← 上一篇</a><a href="https://yundandan.cc/posts/v2rayn-system-proxy-state/">下一篇 →</a></nav>
-
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
 </article>
 <div class="article-rail">
 <aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先让对照真正可比</a><a class="level-2" href="#firefox">Firefox可以单独选择代理来源</a><a class="level-2" href="#heading-1">四项值得先看</a><a class="level-2" href="#heading-2">用最小改动验证判断</a><a class="level-2" href="#heading-3">浏览器正常后再做真实任务</a></nav></aside>
@@ -163,5 +168,5 @@
 </div>
 </dialog>
 
-
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/8cf9984b-b89f-4a93-86c3-acd92c84c382/","pageTitle":"同一台电脑Chrome能用，Firefox不能用？先检查浏览器代理来源","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
 </body></html>
