@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="cloud-journal">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚 · 云淡淡机场指南</title>
+<meta name="description" content="解释bit与Byte、Mbps与MB/s的换算，用明确的十进制示例估算文件下载时间，并列出实际速度低于计算值时应检查的条件。">
+<meta name="keywords" content="Mbps和MB每秒区别,机场测速单位,下载速度换算">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://yundandan.cc/posts/mbps-mbs-download-time/">
+<meta property="og:title" content="100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚">
+<meta property="og:description" content="解释bit与Byte、Mbps与MB/s的换算，用明确的十进制示例估算文件下载时间，并列出实际速度低于计算值时应检查的条件。">
+<meta property="og:url" content="https://yundandan.cc/posts/mbps-mbs-download-time/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="云淡淡机场指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png"><meta property="og:image:alt" content="云淡淡机场指南">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚">
+<meta name="twitter:description" content="解释bit与Byte、Mbps与MB/s的换算，用明确的十进制示例估算文件下载时间，并列出实际速度低于计算值时应检查的条件。">
+<meta name="twitter:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
+<meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-22T12:24:04&#43;08:00"><meta property="article:modified_time" content="2026-09-22T12:24:41&#43;08:00"><meta property="article:tag" content="预算规划"><meta property="article:tag" content="网络测速">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://yundandan.cc/posts/mbps-mbs-download-time/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-22T12:24:41+08:00","datePublished":"2026-09-22T12:24:04+08:00","description":"解释bit与Byte、Mbps与MB/s的换算，用明确的十进制示例估算文件下载时间，并列出实际速度低于计算值时应检查的条件。","headline":"100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://yundandan.cc/posts/mbps-mbs-download-time/","@type":"WebPage"},"url":"https://yundandan.cc/posts/mbps-mbs-download-time/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://yundandan.cc/posts/mbps-mbs-download-time/","name":"100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚","position":2}]}]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/style.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/search.css"><script defer src="https://yundandan.cc/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/skin.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/reader.css">
+<link rel="icon" href="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
+
+<script defer src="https://yundandan.cc/assets/theme/theme.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/reader.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/viewer.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://yundandan.cc/assets/theme/interactions.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/referral-links.js"></script>
+
+
+</head>
+
+<body class="article-page">
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://yundandan.cc/"><img src="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://yundandan.cc/">首页</a><a href="https://yundandan.cc/posts/airport-choice-needs-card/">新手起步</a><a href="https://yundandan.cc/categories/buying-guide/">选购指南</a><a href="https://yundandan.cc/categories/registration/">注册上手</a><a href="https://yundandan.cc/categories/clients/">客户端</a><a href="https://yundandan.cc/categories/network-experience/">网络体验</a><a href="https://yundandan.cc/categories/troubleshooting/">排障手册</a></nav>
+<a class="search-toggle" href="https://yundandan.cc/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="article-viewport"><div class="article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚</span></li></ol></nav>
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>阅读时光</div>
+<h1 data-pagefind-meta="title">100Mbps为什么不是每秒100MB？机场测速单位与下载耗时算清楚</h1>
+<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-22T12:24:04&#43;08:00">2026-09-22</time></div>
+<div class="chips" data-pagefind-ignore><a href="https://yundandan.cc/categories/network-experience/">网络体验</a></div>
+</header>
+<div class="prose"><p>测速工具写100Mbps，下载器却显示十几MB/s，看起来相差很大，其实先要确认单位。小写b通常表示bit，大写B表示Byte；一个Byte包含8个bit。</p>
+<h2 id="heading">先做单位换算</h2>
+<p>按十进制单位计算，100Mbps除以8，得到12.5MB/s。它是数据单位的换算，不代表每次下载一定能达到这个速度。</p>
+<p>同样，下载器显示10MB/s，对应的数据率约为80Mbps。比较前先统一单位，可以避免把同一速度误解成八倍差距。</p>
+<table>
+<thead>
+<tr>
+<th>标示值</th>
+<th>十进制换算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40Mbps</td>
+<td>约5MB/s</td>
+</tr>
+<tr>
+<td>80Mbps</td>
+<td>约10MB/s</td>
+</tr>
+<tr>
+<td>100Mbps</td>
+<td>约12.5MB/s</td>
+</tr>
+</tbody>
+</table>
+<p>有的软件使用MiB、GiB等二进制单位，也有软件标示方式不够明确。遇到小幅差异时，先查看工具说明，而不是立即判断被限速。</p>
+<h2 id="heading-1">估算文件需要多久</h2>
+<p>假设文件是十进制1GB，即1000MB，实际可持续速度为10MB/s，那么简单估算需要100秒。这里的“实际可持续”很重要：不能拿一瞬间峰值代替全程平均值。</p>
+<p>如果速度在波动，用完整任务的文件大小除以实际时间，得到的平均数通常更适合比较这次下载。开始连接、重试和等待也可能占用时间。</p>
+<h2 id="heading-2">为什么真实结果低于换算值</h2>
+<p>带宽上限、实际吞吐和延迟是不同概念，Cloudflare的<a href="https://www.cloudflare.com/learning/performance/glossary/what-is-latency/">性能基础说明</a>也强调它们之间的区别。下载还会受目标服务、连接方式、本地网络和其他并发任务影响。</p>
+<p>因此，从套餐或测速数字换算出来的值，更适合作为理解单位的参考，不应作为任何服务商对你具体文件的保证。</p>
+<h2 id="heading-3">比较机场时保留完整条件</h2>
+<p>写下工具、单位、文件来源、大小、开始结束时间，以及是否有后台传输。尽量使用同一个合法可下载资源、相同网络和相近时段。</p>
+<p>不要把一次大流量测速当作日常必须动作。先看自己的任务是否满足，再决定是否有必要进一步定位速度问题。</p>
+<h2 id="heading-4">一个容易执行的检查顺序</h2>
+<p>先核对b和B，再核对十进制与二进制，接着看持续速度与峰值是否混用，最后才检查网络路径和服务限制。把这些基础问题分清楚，你就不容易被夸张的速度截图带偏，也更容易规划自己的流量预算。</p>
+</div>
+
+<div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/budget/"># 预算规划</a><a href="https://yundandan.cc/tags/network-test/"># 网络测速</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/dns-error-domain-scope/">← 上一篇</a><a href="https://yundandan.cc/posts/latency-speed-real-experience/">下一篇 →</a></nav>
+
+</article>
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先做单位换算</a><a class="level-2" href="#heading-1">估算文件需要多久</a><a class="level-2" href="#heading-2">为什么真实结果低于换算值</a><a class="level-2" href="#heading-3">比较机场时保留完整条件</a><a class="level-2" href="#heading-4">一个容易执行的检查顺序</a></nav></aside>
+</div>
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer">
+
+<span>© 2026 云淡淡机场指南</span>
+</footer>
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://yundandan.cc/pagefind/pagefind-component-ui.js" data-stylesheet="https://yundandan.cc/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://yundandan.cc/pagefind/" base-url="https://yundandan.cc/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+
+</body></html>
