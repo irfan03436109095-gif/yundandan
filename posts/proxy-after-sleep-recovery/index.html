@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="cloud-journal">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查 · 云淡淡机场指南</title>
+<meta name="description" content="Windows电脑休眠后机场代理断流如何排查？先确认接入网络，再检查客户端与应用，按单项恢复和再次休眠复测定位问题。">
+<meta name="keywords" content="休眠后代理断流,Windows网络恢复,机场客户端">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://yundandan.cc/posts/proxy-after-sleep-recovery/">
+<meta property="og:title" content="电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查">
+<meta property="og:description" content="Windows电脑休眠后机场代理断流如何排查？先确认接入网络，再检查客户端与应用，按单项恢复和再次休眠复测定位问题。">
+<meta property="og:url" content="https://yundandan.cc/posts/proxy-after-sleep-recovery/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="云淡淡机场指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png"><meta property="og:image:alt" content="云淡淡机场指南">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查">
+<meta name="twitter:description" content="Windows电脑休眠后机场代理断流如何排查？先确认接入网络，再检查客户端与应用，按单项恢复和再次休眠复测定位问题。">
+<meta name="twitter:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
+<meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-23T13:39:31&#43;08:00"><meta property="article:modified_time" content="2026-09-23T13:40:37&#43;08:00"><meta property="article:tag" content="故障排查"><meta property="article:tag" content="代理分流">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://yundandan.cc/posts/proxy-after-sleep-recovery/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-23T13:40:37+08:00","datePublished":"2026-09-23T13:39:31+08:00","description":"Windows电脑休眠后机场代理断流如何排查？先确认接入网络，再检查客户端与应用，按单项恢复和再次休眠复测定位问题。","headline":"电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://yundandan.cc/posts/proxy-after-sleep-recovery/","@type":"WebPage"},"url":"https://yundandan.cc/posts/proxy-after-sleep-recovery/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://yundandan.cc/posts/proxy-after-sleep-recovery/","name":"电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查","position":2}]}]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/style.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/search.css"><script defer src="https://yundandan.cc/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/skin.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/reader.css">
+<link rel="icon" href="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
+<link rel="stylesheet" href="https://yundandan.cc/assets/theme/artalk.css"><script defer src="https://yundandan.cc/assets/theme/artalk.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/theme.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/reader.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/viewer.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://yundandan.cc/assets/theme/interactions.js"></script>
+<script defer src="https://yundandan.cc/assets/theme/referral-links.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HNDQC290C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HNDQC290C');
+</script>
+
+</head>
+
+<body class="article-page">
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://yundandan.cc/"><img src="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://yundandan.cc/">首页</a><a href="https://yundandan.cc/posts/airport-choice-needs-card/">新手起步</a><a href="https://yundandan.cc/categories/buying-guide/">选购指南</a><a href="https://yundandan.cc/categories/registration/">注册上手</a><a href="https://yundandan.cc/categories/clients/">客户端</a><a href="https://yundandan.cc/categories/network-experience/">网络体验</a><a href="https://yundandan.cc/categories/troubleshooting/">排障手册</a></nav>
+<a class="search-toggle" href="https://yundandan.cc/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="article-viewport"><div class="article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查</span></li></ol></nav>
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>阅读时光</div>
+<h1 data-pagefind-meta="title">电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查</h1>
+<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-23T13:39:31&#43;08:00">2026-09-23</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://yundandan.cc/categories/troubleshooting/">排障手册</a></div>
+</header>
+<div class="prose"><p>合上电脑前一切正常，唤醒后机场客户端也还开着，但浏览器一直转圈。这种现象不应直接等同于订阅失效。先判断是接入网络没有恢复，还是客户端与应用没有重新建立可用连接，通常更容易找到需要处理的位置。</p>
+<h2 id="heading">唤醒后先观察，不急着同时改设置</h2>
+<p>记录唤醒时间、网络名称、客户端状态和报错。保持原节点与代理模式，避免一开始就同时切节点、改 DNS、更新订阅和重装软件。否则即使恢复，也无法知道真正起作用的是哪一步。</p>
+<h2 id="heading-1">第一层：电脑是否重新接上网络</h2>
+<p>检查 Wi-Fi 是否已连接到预期网络、飞行模式是否关闭，以及系统是否提示需要登录网络。若是酒店或公共热点，先按该网络的正常流程完成门户认证。</p>
+<p>可以用另一台设备在同一网络访问熟悉的网站做对照；若两台都无法连接，先检查接入网络。如果只有这台电脑异常，再按 Windows 的网络疑难解答检查。<a href="https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows">Microsoft 官方排障说明</a>提供了从连接状态到设备与网络对照的步骤，网络重置应留作后续手段，因为它会移除并重新安装网络适配器及相关设置。</p>
+<h2 id="heading-2">第二层：窗口还在，不代表入口可用</h2>
+<p>查看客户端是否显示核心正在运行，最近日志是否出现启动失败、绑定失败或连接超时。核对当前配置、节点和本地监听端口。使用 HTTP 或 SOCKS 入口的应用，需要连接到客户端实际启用的入口；端口不能从别人的教程照抄。</p>
+<p><a href="https://wiki.metacubex.one/config/inbound/port/">mihomo 代理端口文档</a>区分 HTTP、SOCKS 和混合入口。这个区别也提醒我们：客户端窗口存在，只能说明界面还在，不能替代对核心和代理入口的检查。</p>
+<h2 id="heading-3">第三层：只恢复一项，再复测</h2>
+<p>如果接入网络正常，先重新发起一次应用请求。若仅一个应用失败，可正常关闭并重新打开该应用，观察是否恢复。</p>
+<p>若多个依赖该客户端的应用均失败，保留日志后按客户端提供的正常方式重启核心或退出重开，再确认配置及节点没有被自动切换。使用 TUN 时同时观察客户端给出的服务或权限提示，不要为了“快速修复”盲目关闭安全软件、删除适配器或更改系统路由。</p>
+<h2 id="heading-4">用一张小表保存恢复线索</h2>
+<table>
+<thead>
+<tr>
+<th>检查阶段</th>
+<th>看到的现象</th>
+<th>单次操作</th>
+<th>操作后结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接入网络</td>
+<td>Wi-Fi是否连接、是否有门户</td>
+<td>按提示恢复接入</td>
+<td>基础访问是否正常</td>
+</tr>
+<tr>
+<td>客户端</td>
+<td>核心状态、当前配置、日志</td>
+<td>正常重启核心或客户端</td>
+<td>新连接是否建立</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>一个应用还是多个应用失败</td>
+<td>重开有问题的应用</td>
+<td>相同任务是否恢复</td>
+</tr>
+</tbody>
+</table>
+<p>日志只保留必要错误行，隐藏订阅链接、口令与私人访问目标。把记录交给支持人员时，说明操作顺序比只发“断网”更有帮助。</p>
+<h2 id="heading-5">再休眠一次才算验收</h2>
+<p>保存正在编辑的文件后，做一次受控休眠与唤醒复测，确认相同问题是否还会出现。若每次都需要同一步骤才能恢复，把这一规律与客户端版本、网络类型一起记录，再查对应软件的正式问题说明。</p>
+<p>对于机场推荐和试用，新手也可以加入“唤醒后能否恢复日常任务”这一项。一次成功恢复不能证明永久修复，但能帮助你把问题从笼统的“节点坏了”缩小到具体环节。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/troubleshooting/"># 故障排查</a><a href="https://yundandan.cc/tags/routing/"># 代理分流</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://yundandan.cc/posts/support-request-useful-record/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">唤醒后先观察，不急着同时改设置</a><a class="level-2" href="#heading-1">第一层：电脑是否重新接上网络</a><a class="level-2" href="#heading-2">第二层：窗口还在，不代表入口可用</a><a class="level-2" href="#heading-3">第三层：只恢复一项，再复测</a><a class="level-2" href="#heading-4">用一张小表保存恢复线索</a><a class="level-2" href="#heading-5">再休眠一次才算验收</a></nav></aside>
+</div>
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer">
+
+<span>© 2026 云淡淡机场指南</span>
+</footer>
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://yundandan.cc/pagefind/pagefind-component-ui.js" data-stylesheet="https://yundandan.cc/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://yundandan.cc/pagefind/" base-url="https://yundandan.cc/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/e99081a7-a183-4da0-93cf-a116dad0efe3/","pageTitle":"电脑休眠后机场代理断流怎么办？唤醒后的分层恢复检查","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+</body></html>
