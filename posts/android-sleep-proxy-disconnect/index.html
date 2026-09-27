@@ -4,23 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？ · 云淡淡机场指南</title>
-<meta name="description" content="iPhone私有无线局域网地址会改变机场出口IP吗？分清MAC、节点入口和公网出口，按正确顺序排查换网故障。">
-<meta name="keywords" content="iPhone私有无线局域网地址,机场出口IP,WiFi排障,机场新手">
-<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://yundandan.cc/posts/iphone-private-wifi-address/">
-<meta property="og:title" content="iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？">
-<meta property="og:description" content="iPhone私有无线局域网地址会改变机场出口IP吗？分清MAC、节点入口和公网出口，按正确顺序排查换网故障。">
-<meta property="og:url" content="https://yundandan.cc/posts/iphone-private-wifi-address/">
+<title>安卓锁屏后机场断开？先排查省电与后台限制 · 云淡淡机场指南</title>
+<meta name="description" content="安卓锁屏后机场代理断开怎么办？检查Doze、应用电池优化和网络切换，用单变量对照验证后台连接。">
+<meta name="keywords" content="安卓锁屏代理断开,Doze,电池优化,机场排障">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://yundandan.cc/posts/android-sleep-proxy-disconnect/">
+<meta property="og:title" content="安卓锁屏后机场断开？先排查省电与后台限制">
+<meta property="og:description" content="安卓锁屏后机场代理断开怎么办？检查Doze、应用电池优化和网络切换，用单变量对照验证后台连接。">
+<meta property="og:url" content="https://yundandan.cc/posts/android-sleep-proxy-disconnect/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="云淡淡机场指南">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png"><meta property="og:image:alt" content="云淡淡机场指南">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？">
-<meta name="twitter:description" content="iPhone私有无线局域网地址会改变机场出口IP吗？分清MAC、节点入口和公网出口，按正确顺序排查换网故障。">
+<meta name="twitter:title" content="安卓锁屏后机场断开？先排查省电与后台限制">
+<meta name="twitter:description" content="安卓锁屏后机场代理断开怎么办？检查Doze、应用电池优化和网络切换，用单变量对照验证后台连接。">
 <meta name="twitter:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
-<meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-26T09:07:01&#43;08:00"><meta property="article:modified_time" content="2026-09-26T09:07:07&#43;08:00"><meta property="article:tag" content="隐私安全"><meta property="article:tag" content="故障排查">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://yundandan.cc/posts/iphone-private-wifi-address/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-26T09:07:07+08:00","datePublished":"2026-09-26T09:07:01+08:00","description":"iPhone私有无线局域网地址会改变机场出口IP吗？分清MAC、节点入口和公网出口，按正确顺序排查换网故障。","headline":"iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://yundandan.cc/posts/iphone-private-wifi-address/","@type":"WebPage"},"url":"https://yundandan.cc/posts/iphone-private-wifi-address/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://yundandan.cc/posts/iphone-private-wifi-address/","name":"iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？","position":2}]}]}</script>
+<meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-27T09:07:10&#43;08:00"><meta property="article:modified_time" content="2026-09-27T09:07:24&#43;08:00"><meta property="article:tag" content="网络测速"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://yundandan.cc/posts/android-sleep-proxy-disconnect/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-27T09:07:24+08:00","datePublished":"2026-09-27T09:07:10+08:00","description":"安卓锁屏后机场代理断开怎么办？检查Doze、应用电池优化和网络切换，用单变量对照验证后台连接。","headline":"安卓锁屏后机场断开？先排查省电与后台限制","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://yundandan.cc/posts/android-sleep-proxy-disconnect/","@type":"WebPage"},"url":"https://yundandan.cc/posts/android-sleep-proxy-disconnect/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://yundandan.cc/posts/android-sleep-proxy-disconnect/","name":"安卓锁屏后机场断开？先排查省电与后台限制","position":2}]}]}</script>
 
 <script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://yundandan.cc/assets/theme/style.css">
@@ -73,70 +73,43 @@
 <div class="article-viewport"><div class="article-scroll">
 <main id="main" tabindex="-1" class="shell article-shell">
 
-<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？</span></li></ol></nav>
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">安卓锁屏后机场断开？先排查省电与后台限制</span></li></ol></nav>
 
 
 <article data-pagefind-body>
 <header class="article-header">
 <div class="eyebrow" data-pagefind-ignore>阅读时光</div>
-<h1 data-pagefind-meta="title">iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？</h1>
-<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-26T09:07:01&#43;08:00">2026-09-26</time><span><span id="page-views">—</span> 次阅读</span></div>
+<h1 data-pagefind-meta="title">安卓锁屏后机场断开？先排查省电与后台限制</h1>
+<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-27T09:07:10&#43;08:00">2026-09-27</time><span><span id="page-views">—</span> 次阅读</span></div>
 <div class="chips" data-pagefind-ignore><a href="https://yundandan.cc/categories/troubleshooting/">排障手册</a></div>
 </header>
-<div class="prose"><h2 id="iphone--ip-">iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？</h2>
-<p>iPhone 的“私有无线局域网地址”容易和机场出口 IP 混淆。前者是设备连接某个 Wi-Fi 时向局域网展示的 MAC 地址，用于减少跨网络跟踪；后者是流量经过机场节点后，目标网站看到的公网 IP。两者位于不同层级，改变私有 Wi-Fi 地址不会直接替你切换机场节点。</p>
-<h3 id="heading">先确认你看到的是哪种地址</h3>
-<ul>
-<li>Wi-Fi 详情页中的私有地址属于本地链路身份。</li>
-<li>机场客户端中的节点地址是代理入口信息。</li>
-<li>公共 IP 查询网站显示的是对外出口地址。</li>
-</ul>
-<p>排障时把三者分别记录，避免看到一串地址变化就误以为“机场自动换 IP”。不要公开完整订阅链接、节点凭据或设备标识。</p>
-<h3 id="heading-1">为什么私有地址可能影响联网</h3>
-<p>Apple 说明，私有 Wi-Fi 地址按网络使用，用于降低设备被跟踪的可能。在较新的系统中，每个网络可有关闭、固定或轮换等模式。某些需要设备登记、门户认证或基于 MAC 分配权限的网络，地址变化后可能把手机当作新设备，表现为 Wi-Fi 已连接但无法上网。</p>
-<p>这时机场客户端通常只是后续受影响者：底层 Wi-Fi 尚未获得正常互联网连接，代理自然也无法建立。</p>
-<h3 id="heading-2">正确的排查顺序</h3>
+<div class="prose"><h2 id="heading">安卓锁屏后机场断开？先排查省电与后台限制</h2>
+<p>安卓手机亮屏时代理正常，锁屏一段时间后消息延迟或网页需要重新连接，不能立刻判断节点不稳定。Android 的 Doze 与 App Standby 会在设备闲置时限制后台 CPU 和网络活动，不同品牌还可能提供额外的省电管理。</p>
+<p>调整省电设置会增加耗电，应该先用对照确认，再只修改当前机场客户端相关项。</p>
+<h3 id="heading-1">建立可复现步骤</h3>
 <ol>
-<li>暂停机场客户端，确认普通网页能否直连打开。</li>
-<li>打开当前 Wi-Fi 的详情页，记录私有无线局域网地址模式，不要立即修改。</li>
-<li>如果是酒店、校园或公司网络，先完成门户登录或设备登记。</li>
-<li>直连恢复后再启动机场客户端，选择一个已知可用节点。</li>
-<li>分别检查客户端连接状态、公共出口 IP 和实际网页。</li>
+<li>选择一个已知可用节点，记录客户端连接时间。</li>
+<li>亮屏访问固定网页，确认当前出口与连接正常。</li>
+<li>锁屏并保持设备静置 10 至 20 分钟。</li>
+<li>解锁后立即检查客户端状态、通知、日志和固定网页。</li>
+<li>在充电与不充电状态各做一次，观察问题是否只在闲置省电时出现。</li>
 </ol>
-<p>只有在网络管理员明确说明该网络需要固定设备地址，或切换模式后问题能稳定复现时，才考虑调整。关闭隐私功能会降低该网络上的隐私保护，不应作为通用“加速方法”。</p>
-<h3 id="heading-3">验收表</h3>
-<table>
-<thead>
-<tr>
-<th>检查项</th>
-<th>通过标准</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Wi-Fi 基础连接</td>
-<td>暂停代理后可访问公开网页</td>
-</tr>
-<tr>
-<td>门户认证</td>
-<td>登录页完成且不再循环弹出</td>
-</tr>
-<tr>
-<td>机场连接</td>
-<td>客户端显示已连接，无持续重试</td>
-</tr>
-<tr>
-<td>出口确认</td>
-<td>公共 IP 与所选节点预期地区一致</td>
-</tr>
-<tr>
-<td>稳定性</td>
-<td>锁屏、切网后仍能按相同步骤恢复</td>
-</tr>
-</tbody>
-</table>
-<p>新手选择机场推荐服务时，应把本地 Wi-Fi、代理入口和公网出口分开理解。这样遇到“换网络后机场失效”，就能先修复底层连接，而不是反复更新订阅或删除配置。</p>
-<p>Apple 官方安全文档介绍了私有 Wi-Fi 地址的目的和各模式：<a href="https://support.apple.com/en-ca/guide/security/sec31e483abf/web">Apple 设备的 Wi-Fi 隐私</a>。</p>
+<p>Android 官方说明，Doze 会在设备未充电、静置且屏幕关闭一段时间后推迟后台网络和 CPU 活动，并在维护窗口短暂恢复。设备被唤醒、移动或接上充电器后会退出 Doze。</p>
+<h3 id="heading-2">再检查应用电池设置</h3>
+<p>进入 <strong>设置 → 应用 → 目标客户端 → 电池</strong>，记录当前是优化、受限还是不受限。不同品牌名称和路径可能不同，不要照搬截图。先把“受限”改为系统默认的“优化”做对照；只有问题稳定复现且该客户端确需持续运行时，才短期测试“不受限”。</p>
+<p>同时检查：</p>
+<ul>
+<li>客户端是否有持续连接或前台服务通知；</li>
+<li>系统省电模式是否开启；</li>
+<li>厂商后台清理是否把客户端移除；</li>
+<li>锁屏后 Wi-Fi 是否切换到蜂窝网络；</li>
+<li>订阅或节点本身是否在亮屏状态也会断开。</li>
+</ul>
+<h3 id="heading-3">不要一次改完所有设置</h3>
+<p>一次只改一个项目，再按相同锁屏时长复测。若设为不受限后仍断开，应恢复原设置，继续检查网络切换、客户端日志和节点。若只在某一节点发生，也要做换节点对照。</p>
+<h3 id="heading-4">验收标准</h3>
+<p>通过标准包括：锁屏后客户端仍保持预期连接；解锁后固定网页无需手动重启即可访问；电量消耗处于自己可接受范围；恢复默认设置后能明确复现差异。这样才能把系统后台限制与机场节点问题分开。</p>
+<p>来源：<a href="https://developer.android.com/training/monitoring-device-state/doze-standby">Android Developers：Doze 与 App Standby</a>、<a href="https://support.google.com/pixelphone/answer/7015477">Google Pixel 电池优化说明</a>。</p>
 </div>
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
@@ -144,12 +117,12 @@
 <span id="page-like-label">点赞</span><span id="page-like-count">—</span>
 </button><p id="page-like-message" role="status"></p>
 </div>
-<div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/privacy/"># 隐私安全</a><a href="https://yundandan.cc/tags/troubleshooting/"># 故障排查</a></div>
-<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/android-sleep-proxy-disconnect/">← 上一篇</a><a href="https://yundandan.cc/posts/iphone-low-data-mode-airport/">下一篇 →</a></nav>
+<div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/network-test/"># 网络测速</a><a href="https://yundandan.cc/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://yundandan.cc/posts/iphone-private-wifi-address/">下一篇 →</a></nav>
 <section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
 </article>
 <div class="article-rail">
-<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#iphone--ip-">iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？</a><a class="level-3" href="#heading">先确认你看到的是哪种地址</a><a class="level-3" href="#heading-1">为什么私有地址可能影响联网</a><a class="level-3" href="#heading-2">正确的排查顺序</a><a class="level-3" href="#heading-3">验收表</a></nav></aside>
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">安卓锁屏后机场断开？先排查省电与后台限制</a><a class="level-3" href="#heading-1">建立可复现步骤</a><a class="level-3" href="#heading-2">再检查应用电池设置</a><a class="level-3" href="#heading-3">不要一次改完所有设置</a><a class="level-3" href="#heading-4">验收标准</a></nav></aside>
 </div>
 </main>
 </div>
@@ -181,5 +154,5 @@
 </div>
 </dialog>
 
-<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/f91e20ce-b326-4f8b-8102-c4d8b5ad24a8/","pageTitle":"iPhone 私有无线局域网地址变化，会让机场出口 IP 变化吗？","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/275ca696-6e9a-4bc2-93a8-dee7adaade92/","pageTitle":"安卓锁屏后机场断开？先排查省电与后台限制","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
 </body></html>
