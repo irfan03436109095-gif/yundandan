@@ -4,23 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析 · 云淡淡机场指南</title>
-<meta name="description" content="安卓开机场后部分网站提示找不到服务器怎么办？检查私人DNS、Chrome安全DNS和客户端解析设置。">
-<meta name="keywords" content="安卓私人DNS,机场客户端,DNS解析失败,新手排障">
-<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://yundandan.cc/posts/android-private-dns-proxy-check/">
-<meta property="og:title" content="安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析">
-<meta property="og:description" content="安卓开机场后部分网站提示找不到服务器怎么办？检查私人DNS、Chrome安全DNS和客户端解析设置。">
-<meta property="og:url" content="https://yundandan.cc/posts/android-private-dns-proxy-check/">
+<title>安卓显示 VPN 却没网络？检查始终开启与阻止直连 · 云淡淡机场指南</title>
+<meta name="description" content="安卓显示VPN图标却没网络怎么办？检查始终开启VPN、阻止直连和分应用代理设置，再判断机场节点。">
+<meta name="keywords" content="安卓始终开启VPN,阻止无VPN连接,机场客户端,新手排障">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://yundandan.cc/posts/android-always-on-vpn-blocking/">
+<meta property="og:title" content="安卓显示 VPN 却没网络？检查始终开启与阻止直连">
+<meta property="og:description" content="安卓显示VPN图标却没网络怎么办？检查始终开启VPN、阻止直连和分应用代理设置，再判断机场节点。">
+<meta property="og:url" content="https://yundandan.cc/posts/android-always-on-vpn-blocking/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="云淡淡机场指南">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png"><meta property="og:image:alt" content="云淡淡机场指南">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析">
-<meta name="twitter:description" content="安卓开机场后部分网站提示找不到服务器怎么办？检查私人DNS、Chrome安全DNS和客户端解析设置。">
+<meta name="twitter:title" content="安卓显示 VPN 却没网络？检查始终开启与阻止直连">
+<meta name="twitter:description" content="安卓显示VPN图标却没网络怎么办？检查始终开启VPN、阻止直连和分应用代理设置，再判断机场节点。">
 <meta name="twitter:image" content="https://yundandan.cc/assets/media/7432db8c-9c81-4ef1-a349-860c00e7939b.png">
-<meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-28T09:07:21&#43;08:00"><meta property="article:modified_time" content="2026-09-28T09:07:43&#43;08:00"><meta property="article:tag" content="网络测速"><meta property="article:tag" content="故障排查">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://yundandan.cc/posts/android-private-dns-proxy-check/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-28T09:07:43+08:00","datePublished":"2026-09-28T09:07:21+08:00","description":"安卓开机场后部分网站提示找不到服务器怎么办？检查私人DNS、Chrome安全DNS和客户端解析设置。","headline":"安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://yundandan.cc/posts/android-private-dns-proxy-check/","@type":"WebPage"},"url":"https://yundandan.cc/posts/android-private-dns-proxy-check/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://yundandan.cc/posts/android-private-dns-proxy-check/","name":"安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析","position":2}]}]}</script>
+<meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-29T09:08:04&#43;08:00"><meta property="article:modified_time" content="2026-09-29T09:08:35&#43;08:00"><meta property="article:tag" content="网络测速"><meta property="article:tag" content="故障排查"><meta property="article:tag" content="代理分流">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://yundandan.cc/posts/android-always-on-vpn-blocking/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-29T09:08:35+08:00","datePublished":"2026-09-29T09:08:04+08:00","description":"安卓显示VPN图标却没网络怎么办？检查始终开启VPN、阻止直连和分应用代理设置，再判断机场节点。","headline":"安卓显示 VPN 却没网络？检查始终开启与阻止直连","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://yundandan.cc/posts/android-always-on-vpn-blocking/","@type":"WebPage"},"url":"https://yundandan.cc/posts/android-always-on-vpn-blocking/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://yundandan.cc/posts/android-always-on-vpn-blocking/","name":"安卓显示 VPN 却没网络？检查始终开启与阻止直连","position":2}]}]}</script>
 
 <script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://yundandan.cc/assets/theme/style.css">
@@ -73,36 +73,37 @@
 <div class="article-viewport"><div class="article-scroll">
 <main id="main" tabindex="-1" class="shell article-shell">
 
-<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析</span></li></ol></nav>
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">安卓显示 VPN 却没网络？检查始终开启与阻止直连</span></li></ol></nav>
 
 
 <article data-pagefind-body>
 <header class="article-header">
 <div class="eyebrow" data-pagefind-ignore>阅读时光</div>
-<h1 data-pagefind-meta="title">安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析</h1>
-<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-28T09:07:21&#43;08:00">2026-09-28</time><span><span id="page-views">—</span> 次阅读</span></div>
+<h1 data-pagefind-meta="title">安卓显示 VPN 却没网络？检查始终开启与阻止直连</h1>
+<div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-29T09:08:04&#43;08:00">2026-09-29</time><span><span id="page-views">—</span> 次阅读</span></div>
 <div class="chips" data-pagefind-ignore><a href="https://yundandan.cc/categories/troubleshooting/">排障手册</a></div>
 </header>
-<div class="prose"><p>安卓连接机场后，如果大多数应用正常，只有部分网站提示“找不到服务器”或域名解析失败，先检查系统“私人 DNS”、浏览器安全 DNS 和客户端 DNS 是否同时启用。它们可能走不同解析路径，不能只靠换节点判断。</p>
-<h2 id="-dns-">私人 DNS 能做什么</h2>
-<p>Android 官方帮助说明，系统可把私人 DNS 设为关闭、自动或指定提供商主机名；默认会在可用网络上使用私人 DNS。它保护的是 DNS 查询与应答，不会加密其他应用流量，也不等同于机场代理或 VPN。</p>
-<p>因此，状态栏显示代理已连接，并不说明域名一定由机场客户端解析。浏览器还可能有自己的安全 DNS 设置，三层同时存在时，故障范围会变得不一致。</p>
-<h2 id="heading">先记录三处设置</h2>
+<div class="prose"><p>安卓状态栏显示 VPN 图标，但部分应用完全没有网络，先检查系统是否启用了“始终开启的 VPN”和“阻止未使用 VPN 的连接”。当指定的 VPN 应用没有正常建立隧道时，后一个开关可能按设计阻断直连，而不是机场节点突然让所有应用失效。</p>
+<h2 id="heading">先确认系统层状态</h2>
+<p>设置入口会随手机品牌略有不同，通常可在“网络和互联网 → VPN”中找到目标应用。记录三项：始终开启的 VPN 指向哪个应用、是否阻止无 VPN 连接、机场客户端当前是否显示已连接。</p>
+<p>Google 的 Android 管理文档说明，始终开启 VPN 可在设备启动后维持指定 VPN；开启“阻止未使用 VPN 的连接”后，不经过该 VPN 的连接会被拦截。若还配置了按应用允许或排除列表，列表外应用的行为也会不同。</p>
+<h2 id="heading-1">按顺序排查</h2>
 <ol>
-<li>Android 设置 → 网络和互联网 → 私人 DNS，记录当前是自动、关闭还是指定主机名。</li>
-<li>机场客户端中记录 DNS 模式，但不要复制订阅地址或账户信息。</li>
-<li>如果只有 Chrome 失败，检查浏览器“使用安全 DNS”的提供商设置。</li>
-<li>记录失败域名、时间、Wi-Fi或移动网络以及所选节点。</li>
+<li>打开机场客户端，确认订阅、节点和连接状态正常。</li>
+<li>回到系统 VPN 页面，确认始终开启的应用就是当前客户端，而不是已经卸载或停用的旧应用。</li>
+<li>检查客户端内的分应用代理或绕过列表，确认失败应用是否被排除。</li>
+<li>切换 Wi-Fi 与移动数据各测试一次，记录客户端是否重新建立连接。</li>
+<li>查看客户端日志中是否出现权限被撤销、VPN 服务停止或配置加载失败。</li>
 </ol>
-<p>不同品牌菜单名称可能不同，可在系统设置中搜索“私人 DNS”。公司、校园或家庭过滤网络可能依赖指定 DNS，应遵守管理员要求。</p>
-<h2 id="heading-1">做单变量对照</h2>
-<p>先保持节点不变，把系统私人 DNS 从“指定主机名”临时改为“自动”，完全关闭并重开浏览器，再测试同一域名。若恢复，继续核对原提供商主机名和客户端 DNS 路径；测试后按原记录恢复。</p>
-<p>如果自动模式仍失败，可在确认网络政策允许后短暂关闭私人 DNS做对照。不要同时改客户端 DNS、浏览器安全 DNS和分流规则。若只有 Chrome 失败，再单独对照浏览器安全 DNS；若所有应用都失败，查看客户端日志和节点域名解析。</p>
-<h2 id="heading-2">不要把解析失败当节点失效</h2>
-<p>换节点会同时重建连接和缓存，因此“换节点后好了”不能证明原节点故障。至少要比较：同节点不同 DNS 设置、同设置不同节点、同节点 Wi-Fi 与移动网络。只有失败稳定跟随节点时，才继续判断线路问题。</p>
-<h2 id="heading-3">验收标准</h2>
-<p>恢复后的设置应满足：固定测试域名可解析，常用应用能联网，浏览器重启后仍正常，私人 DNS 提供商主机名没有拼写错误，并且未泄露订阅或账户资料。一次只改变一个解析层，才容易得到可复查的排障结论。</p>
-<p>来源：<a href="https://support.google.com/android/answer/9654714">Android 帮助：管理高级网络设置与私人 DNS</a>、<a href="https://support.google.com/chrome/answer/10468685?co=GENIE.Platform%3DAndroid&amp;hl=en">Google Chrome 帮助：Android 安全 DNS 设置</a>。</p>
+<p>如果你的目标是防止流量意外直连，不要为了临时恢复网络长期关闭阻断开关。应先让指定 VPN 应用恢复连接，再验证应用流量。</p>
+<h2 id="heading-2">做一个安全验收</h2>
+<p>先确认系统是否在主动阻断直连，再处理节点。客户端未连接时，受保护应用应符合你的阻断预期；客户端连接后，两个普通网页和一个实际应用应恢复访问。重启手机后再检查一次，确保始终开启的应用没有变回旧客户端。</p>
+<h2 id="heading-3">什么时候才换节点</h2>
+<p>只有系统 VPN 指向正确、客户端隧道已建立、分应用列表无误，而失败仍只跟随某个节点出现时，才把节点作为主要变量。这样可以避免把 Android 的系统保护机制误判成机场服务故障。</p>
+<h2 id="heading-4">参考资料</h2>
+<ul>
+<li><a href="https://support.google.com/work/android/answer/9213914?hl=en">Android Enterprise 帮助：始终开启 VPN、阻止无 VPN 连接与按应用 VPN</a></li>
+</ul>
 </div>
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
@@ -110,12 +111,12 @@
 <span id="page-like-label">点赞</span><span id="page-like-count">—</span>
 </button><p id="page-like-message" role="status"></p>
 </div>
-<div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/network-test/"># 网络测速</a><a href="https://yundandan.cc/tags/troubleshooting/"># 故障排查</a></div>
-<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/android-always-on-vpn-blocking/">← 上一篇</a><a href="https://yundandan.cc/posts/android-sleep-proxy-disconnect/">下一篇 →</a></nav>
+<div class="article-tags" data-pagefind-ignore><a href="https://yundandan.cc/tags/network-test/"># 网络测速</a><a href="https://yundandan.cc/tags/troubleshooting/"># 故障排查</a><a href="https://yundandan.cc/tags/routing/"># 代理分流</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://yundandan.cc/posts/android-private-dns-proxy-check/">下一篇 →</a></nav>
 <section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
 </article>
 <div class="article-rail">
-<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#-dns-">私人 DNS 能做什么</a><a class="level-2" href="#heading">先记录三处设置</a><a class="level-2" href="#heading-1">做单变量对照</a><a class="level-2" href="#heading-2">不要把解析失败当节点失效</a><a class="level-2" href="#heading-3">验收标准</a></nav></aside>
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先确认系统层状态</a><a class="level-2" href="#heading-1">按顺序排查</a><a class="level-2" href="#heading-2">做一个安全验收</a><a class="level-2" href="#heading-3">什么时候才换节点</a><a class="level-2" href="#heading-4">参考资料</a></nav></aside>
 </div>
 </main>
 </div>
@@ -147,5 +148,5 @@
 </div>
 </dialog>
 
-<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/7abd3622-7cce-462a-a239-2114e328a7a3/","pageTitle":"安卓开机场后部分网站找不到？检查私人 DNS 与客户端解析","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/b276969a-e25f-47ad-9a02-51f26fbc526e/","pageTitle":"安卓显示 VPN 却没网络？检查始终开启与阻止直连","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
 </body></html>
