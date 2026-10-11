@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="cloud-journal">
+<html lang="zh-CN" data-theme="cloud-journal-seo">
 
 <head>
 <meta charset="utf-8">
@@ -14,19 +14,20 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="云淡淡机场指南">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp"><meta property="og:image:alt" content="云淡淡机场指南">
+
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="节点延迟越低越好吗？把毫秒、下载速度和真实体验分开看">
 <meta name="twitter:description" content="低延迟不等于所有任务都快。区分时间指标、实际吞吐和任务完成结果，按交互、视频与下载分别观察，减少被单一毫秒数误导。">
-<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp">
+
 <meta name="author" content="王牌飞行员"><meta property="article:published_time" content="2026-09-22T12:23:59&#43;08:00"><meta property="article:modified_time" content="2026-09-22T12:24:37&#43;08:00"><meta property="article:tag" content="试用评估"><meta property="article:tag" content="网络测速">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/latency-speed-real-experience/#article","@type":"BlogPosting","author":{"@type":"Person","name":"王牌飞行员"},"dateModified":"2026-09-22T12:24:37+08:00","datePublished":"2026-09-22T12:23:59+08:00","description":"低延迟不等于所有任务都快。区分时间指标、实际吞吐和任务完成结果，按交互、视频与下载分别观察，减少被单一毫秒数误导。","headline":"节点延迟越低越好吗？把毫秒、下载速度和真实体验分开看","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/latency-speed-real-experience/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/latency-speed-real-experience/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/latency-speed-real-experience/","name":"节点延迟越低越好吗？把毫秒、下载速度和真实体验分开看","position":2}]}]}</script>
+
 
 <script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/style.css">
 <link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/advertisements.css">
 <link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/search.css"><script defer src="https://www.yundandan.cc/assets/theme/search.js"></script>
-<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/skin.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/skin.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/seo-images.css">
 <link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/viewer.css">
 <link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/reader.css">
 <link rel="icon" href="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp">
@@ -37,7 +38,7 @@
 <script defer src="https://www.yundandan.cc/assets/theme/image-viewer.js"></script>
 
 <script defer src="https://www.yundandan.cc/assets/theme/interactions.js"></script>
-<script defer src="https://www.yundandan.cc/assets/theme/referral-links.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/seo-enhancements.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HNDQC290C"></script>
 <script>
@@ -50,8 +51,9 @@
 
 <script defer src="https://www.yundandan.cc/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-9HNDQC290C" data-site-hosts="www.yundandan.cc"></script></head>
 
-<body class="article-page">
+<body class="reader-page article-page">
 <a class="skip" href="#main">跳到正文</a>
+
 <header class="site-header">
 <div class="header-inner">
 <a class="brand" href="https://www.yundandan.cc/"><img src="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
@@ -70,15 +72,16 @@
 </div>
 </header>
 
-<div class="article-viewport"><div class="article-scroll">
-<main id="main" tabindex="-1" class="shell article-shell">
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell" data-has-toc="true">
 
 <nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">节点延迟越低越好吗？把毫秒、下载速度和真实体验分开看</span></li></ol></nav>
 
 
+
 <article data-pagefind-body>
 <header class="article-header">
-<div class="eyebrow" data-pagefind-ignore>阅读时光</div>
+<div class="eyebrow" data-pagefind-ignore>文章</div>
 <h1 data-pagefind-meta="title">节点延迟越低越好吗？把毫秒、下载速度和真实体验分开看</h1>
 <div class="metadata" data-pagefind-ignore><span>王牌飞行员</span><time datetime="2026-09-22T12:23:59&#43;08:00">2026-09-22</time><span><span id="page-views">—</span> 次阅读</span></div>
 <div class="chips" data-pagefind-ignore><a href="https://www.yundandan.cc/categories/network-experience/">网络体验</a></div>
@@ -135,19 +138,21 @@
 <nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.yundandan.cc/posts/mbps-mbs-download-time/">← 上一篇</a><a href="https://www.yundandan.cc/posts/capture-versus-routing/">下一篇 →</a></nav>
 <section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
 </article>
+
 <div class="article-rail">
 <aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">延迟和速度不是同一个量</a><a class="level-2" href="#heading-1">按任务决定观察重点</a><a class="level-2" href="#heading-2">测试地址也会影响结论</a><a class="level-2" href="#heading-3">关注重复结果，而不是最好的一次</a><a class="level-2" href="#heading-4">怎样写一个有用的结论</a></nav></aside>
 <aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
-<img class="ad-image" src="https://www.yundandan.cc/assets/media/a5235637-d88c-4eac-984a-ea7aff526fc6.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async">
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/a5235637-d88c-4eac-984a-ea7aff526fc6.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async" width="150" height="150">
 <div class="ad-copy"><h3>FlyBit</h3>
 <p>由此开启，下一程连接</p>
 </div>
 </a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
-<img class="ad-image" src="https://www.yundandan.cc/assets/media/42757820-e5e0-43f5-adcb-95a95accc72b.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async">
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/42757820-e5e0-43f5-adcb-95a95accc72b.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async" width="147" height="150">
 <div class="ad-copy"><h3>99吧</h3>
 <p>探索更多，连接更多可能</p>
 </div>
 </a></aside></div>
+
 </main>
 </div>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
@@ -179,4 +184,5 @@
 </dialog>
 
 <script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/beebeac2-837b-4b64-b393-b6dbd993fc2e/","pageTitle":"节点延迟越低越好吗？把毫秒、下载速度和真实体验分开看","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+
 </body></html>
