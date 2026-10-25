@@ -126,3 +126,114 @@ html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has
   }
 }
 /* yundandan-sidebar-fix:2026-10-25:end */
+
+/* yundandan-ad-style:2026-10-25:start */
+/* 参考图：白底圆角卡片、方形标识、标题和说明。 */
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) {
+  --ad-card-bg: #fff;
+  --ad-card-title: #182338;
+  --ad-card-copy: #65758e;
+  --ad-card-line: #e0e7f1;
+  --ad-card-accent: #5271ff;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-slot {
+  gap: 16px;
+  justify-items: center;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card {
+  width: 100%;
+  max-width: 250px;
+  min-height: 90px;
+  border: 1px solid var(--ad-card-line);
+  border-radius: 16px;
+  background: var(--ad-card-bg);
+  color: var(--ad-card-title);
+  color-scheme: light;
+  box-shadow: 0 2px 8px rgb(43 66 110 / 2%);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:first-child,
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:hover,
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:focus-visible {
+  border-color: var(--ad-card-accent);
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:hover {
+  color: var(--ad-card-title);
+  transform: none;
+  box-shadow: 0 3px 12px rgb(43 66 110 / 7%);
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:focus-visible {
+  outline: 2px solid var(--ad-card-accent);
+  outline-offset: 2px;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card-mixed {
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card-mixed > .ad-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card-mixed:first-child > .ad-image {
+  padding: 10px;
+  background: #19191c;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--ad-card-copy);
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy :is(h2, h3, h4) {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--ad-card-title);
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy :is(p, ul, ol) {
+  margin: 0;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has(> p:first-child > img:only-child):has(> :nth-child(2)) {
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px 12px;
+  padding: 16px;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has(> p:first-child > img:only-child):has(> :nth-child(2)) > p:first-child {
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+/* 此素材本身含大幅留白，在方形框内仅收紧留白，避免标识过小。 */
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy > p:first-child > img[src$="/6bd8e2c5-4d21-4e3a-aab7-00adf6093cb2.png"] {
+  transform: scale(1.7);
+}
+@media (min-width: 761px) {
+  html[data-theme="cloud-journal-seo"] .home-shell:has(> .home-rail > .ad-slot) {
+    grid-template-columns: minmax(0, 1fr) 269px;
+    column-gap: 44px;
+  }
+}
+@media (min-width: 981px) {
+  html[data-theme="cloud-journal-seo"] .article-shell:has(> .article-rail > .ad-slot) {
+    grid-template-columns: minmax(0, 1fr) 269px;
+    column-gap: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card {
+    transition: none;
+  }
+}
+/* yundandan-ad-style:2026-10-25:end */
