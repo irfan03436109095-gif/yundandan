@@ -1,0 +1,128 @@
+/* yundandan-sidebar-fix:2026-10-25:start */
+/* 侧栏广告按内容撑开；图文广告使用小图，保留完整文案。 */
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-slot {
+  align-content: start;
+  grid-auto-rows: max-content;
+  height: auto;
+  min-height: min-content;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card {
+  height: auto;
+  min-height: min-content;
+  align-self: start;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card-mixed {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card-mixed > .ad-image {
+  display: block;
+  width: 56px;
+  height: 56px;
+  max-width: 100%;
+  max-height: 56px;
+  margin: 0;
+  border-radius: 10px;
+  object-fit: contain;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy {
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card-mixed > .ad-copy {
+  padding: 0;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy :is(h2, h3, h4) {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy :is(p, ul, ol) {
+  margin: 0 0 8px;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy > :last-child {
+  margin-bottom: 0;
+}
+/* 同时兼容后台以 Markdown 插入的标识图片，不依赖广告内容或文件名。 */
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 10px;
+  object-fit: contain;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has(> p:first-child > img:only-child):has(> :nth-child(2)) {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-content: start;
+  gap: 6px 12px;
+  padding: 14px;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has(> p:first-child > img:only-child):has(> :nth-child(2)) > p:first-child {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+  margin: 0;
+}
+html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has(> p:first-child > img:only-child):has(> :nth-child(2)) > :not(:first-child) {
+  grid-column: 2;
+  margin: 0;
+}
+/* 整个侧栏共享一个滚动区，分类和卡片不再各自被压缩。 */
+@media (min-width: 761px) {
+  html[data-theme="cloud-journal-seo"] .home-rail {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    gap: 20px;
+    padding: 2px 4px 4px 0;
+  }
+  html[data-theme="cloud-journal-seo"] .home-rail > :is(.home-sidebar, .ad-slot) {
+    flex: 0 0 auto;
+    min-height: min-content;
+    max-height: none;
+    overflow: visible;
+  }
+  html[data-theme="cloud-journal-seo"] .home-rail > .home-sidebar {
+    width: 100%;
+    padding-left: 0;
+    border-left: 0;
+  }
+  html[data-theme="cloud-journal-seo"] .home-rail .sidebar-section {
+    margin: 0;
+    padding: 18px;
+  }
+  html[data-theme="cloud-journal-seo"] .home-rail .sidebar-section + .sidebar-section {
+    margin-top: 18px;
+    padding-top: 18px;
+  }
+}
+@media (min-width: 981px) {
+  html[data-theme="cloud-journal-seo"] .article-page .article-rail {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    gap: 20px;
+    padding: 2px 4px 4px 0;
+  }
+  html[data-theme="cloud-journal-seo"] .article-page .article-rail > :is(.toc, .ad-slot) {
+    flex: 0 0 auto;
+    min-height: min-content;
+    max-height: none;
+    overflow: visible;
+  }
+  html[data-theme="cloud-journal-seo"] .article-page .article-rail > .toc > nav {
+    min-height: min-content;
+    overflow: visible;
+  }
+}
+/* yundandan-sidebar-fix:2026-10-25:end */
