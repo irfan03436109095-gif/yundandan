@@ -128,13 +128,13 @@ html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has
 /* yundandan-sidebar-fix:2026-10-25:end */
 
 /* yundandan-ad-style:2026-10-25:start */
-/* 参考图：白底圆角卡片、方形标识、标题和说明。 */
+/* 保留参考卡片布局，配色随站点明暗主题变化。 */
 html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) {
-  --ad-card-bg: #fff;
-  --ad-card-title: #182338;
-  --ad-card-copy: #65758e;
-  --ad-card-line: #e0e7f1;
-  --ad-card-accent: #5271ff;
+  --ad-card-bg: var(--surface);
+  --ad-card-title: var(--text);
+  --ad-card-copy: var(--muted);
+  --ad-card-line: var(--line);
+  --ad-card-accent: var(--accent);
 }
 html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-slot {
   gap: 16px;
@@ -148,8 +148,8 @@ html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card {
   border-radius: 16px;
   background: var(--ad-card-bg);
   color: var(--ad-card-title);
-  color-scheme: light;
-  box-shadow: 0 2px 8px rgb(43 66 110 / 2%);
+  color-scheme: inherit;
+  box-shadow: none;
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:first-child,
@@ -160,7 +160,7 @@ html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:foc
 html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:hover {
   color: var(--ad-card-title);
   transform: none;
-  box-shadow: 0 3px 12px rgb(43 66 110 / 7%);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 8%);
 }
 html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-card:focus-visible {
   outline: 2px solid var(--ad-card-accent);
