@@ -107,10 +107,9 @@ html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy:has
 }
 @media (min-width: 981px) {
   html[data-theme="cloud-journal-seo"] .article-page .article-rail {
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    scrollbar-gutter: stable;
+    position: static;
+    max-height: none;
+    overflow: visible;
     gap: 20px;
     padding: 2px 4px 4px 0;
   }
