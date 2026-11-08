@@ -17,14 +17,14 @@
   line-height: 1.25;
 }
 .cloud-recommendations-heading > span { font-size: 13px; color: var(--muted); }
-html[data-theme="cloud-journal-seo"] .home-shell > .home-rail {
+html[data-theme="cloud-journal-seo"] .home-guides > .home-rail {
   position: static;
   max-height: none;
   overflow: visible;
   overscroll-behavior: auto;
   scrollbar-gutter: auto;
 }
-html[data-theme="cloud-journal-seo"] .home-shell > .home-rail > .home-sidebar {
+html[data-theme="cloud-journal-seo"] .home-guides > .home-rail > .home-sidebar {
   display: block;
   max-height: none;
   overflow: visible;
@@ -67,7 +67,7 @@ html[data-theme="cloud-journal-seo"] .home-shell > .home-rail > .home-sidebar {
 .cloud-provider-copy > blockquote p { margin: 0; }
 .cloud-provider-copy > blockquote strong { font-size: 34px; letter-spacing: -.04em; color: var(--text); font-weight: 800; margin-right: 5px; }
 .cloud-provider-actions { grid-column: 3; grid-row: 2 / 4; display: flex; gap: 10px; align-self: start; padding-top: 2px; }
-.cloud-provider-actions > a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 10px; flex: 1; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; white-space: nowrap; font-size: 13px; font-weight: 700; line-height: 1.4; }
+.cloud-provider-actions > a { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px; flex: 1; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; white-space: nowrap; font-size: 16px; font-weight: 700; line-height: 1.4; }
 .cloud-provider-details { position: relative; z-index: 2; color: var(--text); background: var(--surface); }
 .cloud-provider-visit { color: var(--bg); background: var(--accent); border-color: var(--accent); }
 .cloud-provider-visit:hover { color: var(--bg); filter: brightness(1.1); }
@@ -93,6 +93,5 @@ html[data-theme="cloud-journal-seo"] .home-shell > .home-rail > .home-sidebar {
   .cloud-provider-copy > blockquote { grid-column: 1; grid-row: 5; padding-top: 6px; }
   .cloud-provider-copy > blockquote strong { font-size: 32px; }
   .cloud-provider-actions { grid-column: 1; grid-row: 6; padding: 0; }
-  .cloud-provider-actions > a { min-height: 46px; font-size: 13px; }
   .cloud-provider-note { font-size: 11px; }
 }
