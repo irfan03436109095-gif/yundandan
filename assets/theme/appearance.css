@@ -236,3 +236,14 @@ html[data-theme="cloud-journal-seo"] :is(.home-rail, .article-rail) .ad-copy > p
   }
 }
 /* yundandan-ad-style:2026-10-25:end */
+
+/* yundandan-plan-badge:start */
+.cloud-provider > .cloud-provider-copy > p:first-child > strong {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: clamp(16px, 2.6vw, 28px);
+  float: none;
+  margin: 0;
+  white-space: nowrap;
+}
+/* yundandan-plan-badge:end */
