@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="cloud-journal-seo">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接 · 云淡淡机场指南</title>
+<meta name="description" content="iPhone 从 Wi-Fi 切蜂窝后机场客户端没重连，怎样分清网络、VPN 按需规则与实际连接？按官方机制做三步检查。">
+<meta name="keywords" content="iPhone VPN按需连接,Wi-Fi切蜂窝,机场客户端排障,连接验收">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.yundandan.cc/posts/iphone-vpn-on-demand-network-switch-check/">
+<meta property="og:title" content="iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接">
+<meta property="og:description" content="iPhone 从 Wi-Fi 切蜂窝后机场客户端没重连，怎样分清网络、VPN 按需规则与实际连接？按官方机制做三步检查。">
+<meta property="og:url" content="https://www.yundandan.cc/posts/iphone-vpn-on-demand-network-switch-check/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="云淡淡机场指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.yundandan.cc/assets/media/38576351-e61a-4a8c-b956-72604ec50f3c.webp"><meta property="og:image:alt" content="iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接">
+<meta name="twitter:description" content="iPhone 从 Wi-Fi 切蜂窝后机场客户端没重连，怎样分清网络、VPN 按需规则与实际连接？按官方机制做三步检查。">
+<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/38576351-e61a-4a8c-b956-72604ec50f3c.webp"><meta name="twitter:image:alt" content="iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接">
+<meta name="author" content="淡定点"><meta property="article:published_time" content="2026-11-16T09:15:31&#43;08:00"><meta property="article:modified_time" content="2026-11-16T09:15:42&#43;08:00"><meta property="article:tag" content="机场推荐"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/iphone-vpn-on-demand-network-switch-check/#article","@type":"BlogPosting","author":{"@type":"Person","name":"淡定点"},"dateModified":"2026-11-16T09:15:42+08:00","datePublished":"2026-11-16T09:15:31+08:00","description":"iPhone 从 Wi-Fi 切蜂窝后机场客户端没重连，怎样分清网络、VPN 按需规则与实际连接？按官方机制做三步检查。","headline":"iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/iphone-vpn-on-demand-network-switch-check/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/iphone-vpn-on-demand-network-switch-check/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/iphone-vpn-on-demand-network-switch-check/","name":"iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接","position":2}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https:\/\/www.yundandan.cc\/posts\/iphone-vpn-on-demand-network-switch-check\/#article","image":["https://www.yundandan.cc/assets/media/38576351-e61a-4a8c-b956-72604ec50f3c.webp"]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/search.css"><script defer src="https://www.yundandan.cc/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/skin.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/seo-images.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/home-recommendations-1.0.6.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/ios-glass-1.0.6.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/reader.css">
+<link rel="icon" href="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/artalk.css"><script defer src="https://www.yundandan.cc/assets/theme/artalk.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/theme.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/reader.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/viewer.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.yundandan.cc/assets/theme/interactions.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/seo-enhancements.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HNDQC290C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HNDQC290C');
+</script>
+
+
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/appearance.css">
+<script defer src="https://www.yundandan.cc/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-9HNDQC290C" data-site-hosts="www.yundandan.cc"></script></head>
+
+<body class="reader-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://www.yundandan.cc/"><img src="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.yundandan.cc/">首页</a><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">新手起步</a><a href="https://www.yundandan.cc/categories/buying-guide/">选购指南</a><a href="https://www.yundandan.cc/categories/registration/">注册上手</a><a href="https://www.yundandan.cc/categories/clients/">客户端</a><a href="https://www.yundandan.cc/categories/network-experience/">网络体验</a><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></nav>
+<a class="search-toggle" href="https://www.yundandan.cc/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章</div>
+<h1 data-pagefind-meta="title">iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接</h1>
+<div class="metadata" data-pagefind-ignore><span>淡定点</span><time datetime="2026-11-16T09:15:31&#43;08:00">2026-11-16</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></div>
+</header>
+<div class="prose"><p>iPhone 上的机场客户端在 Wi-Fi 下可用，走到室外切换蜂窝后没有自动恢复，原因可能在新网络本身、客户端状态或 VPN 配置规则。Apple 说明 VPN On Demand 可按网络变化与连接请求条件自动建立或停止连接；这是一种可配置能力，不表示每个机场客户端、每份配置都默认启用。</p>
+<h2 id="heading">先确认蜂窝网络本身</h2>
+<p>暂时不要反复导入订阅。看蜂窝数据是否启用、信号与套餐是否正常，关闭 VPN 后用普通公开网页做基线测试。若基线也失败，先处理手机网络或运营商问题。若基线成功，再返回客户端查看当前配置、连接状态和最近一次错误；不要只凭状态栏图标下结论。</p>
+<p><img src="https://www.yundandan.cc/assets/media/38576351-e61a-4a8c-b956-72604ec50f3c.webp" alt="手机从 Wi-Fi 切至蜂窝后，按规则检查 VPN 隧道及网页访问的示意图"></p>
+<p><em>示意图：网络已切换、VPN 已连接和目标网页可用需要分别验收。</em></p>
+<h2 id="heading-1">再看是否存在按需连接</h2>
+<p>在 iPhone 的 VPN 设置与所用客户端中辨认当前配置，并查看是否提供“按需连接”或类似选项。不同客户端界面和能力不一样；若看不到该项，不要猜测它已开启。Apple 的部署文档说明，按需规则可在主要网络变化时决定连接要求，也可按域名连接请求评估。受管理设备的配置可能由组织下发，先询问管理员，不要随意删除。</p>
+<h2 id="heading-2">用同一任务做切换验收</h2>
+<p>记录时间，分别在 Wi-Fi 与蜂窝下完成相同的公开网页访问，再记录客户端连接状态和错误。若手动连接可恢复而自动重连不行，重点核对客户端是否支持并启用该配置的自动连接规则；若手动也失败，查订阅有效期、当前节点、蜂窝网络和客户端日志。测试时避免把订阅 URL 或账号凭据截入截图。</p>
+<p>选机场时看“支持 iPhone”之外，还应确认自己使用的客户端与配置在常用网络切换场景中可复现地完成任务；一次图标亮起不能代替实际验收。</p>
+<h2 id="heading-3">资料来源</h2>
+<p><a href="https://support.apple.com/en-jo/guide/deployment/depae3d361d0/web">Apple：VPN On Demand 的网络检测与连接评估</a>；<a href="https://developer.apple.com/documentation/networkextension/vpn-on-demand-rules">Apple Developer：VPN On Demand 规则</a>。核验日期：2026-11-16（北京时间）。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.yundandan.cc/tags/airport-guide/"># 机场推荐</a><a href="https://www.yundandan.cc/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://www.yundandan.cc/posts/iphone-subscription-qr-safety-check/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先确认蜂窝网络本身</a><a class="level-2" href="#heading-1">再看是否存在按需连接</a><a class="level-2" href="#heading-2">用同一任务做切换验收</a><a class="level-2" href="#heading-3">资料来源</a></nav></aside>
+<aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/a5235637-d88c-4eac-984a-ea7aff526fc6.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async" width="150" height="150">
+<div class="ad-copy"><h3>FlyBit</h3>
+<p>由此开启，下一程连接</p>
+</div>
+</a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/42757820-e5e0-43f5-adcb-95a95accc72b.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async" width="147" height="150">
+<div class="ad-copy"><h3>99吧</h3>
+<p>探索更多，连接更多可能</p>
+</div>
+</a></aside></div>
+
+</main>
+
+<footer class="site-footer">
+<nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav>
+<span>© 2026 云淡淡机场指南</span>
+</footer>
+
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.yundandan.cc/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.yundandan.cc/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.yundandan.cc/pagefind/" base-url="https://www.yundandan.cc/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/29b8bb3f-9d86-4e45-b32a-cc6105809e79/","pageTitle":"iPhone 从 Wi-Fi 切到蜂窝后机场没重连？核对按需规则与实际连接","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+
+</body></html>
