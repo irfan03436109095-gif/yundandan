@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="cloud-journal-seo">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序 · 云淡淡机场指南</title>
+<meta name="description" content="Mac 同时连接 Wi-Fi 与以太网怎样核对机场路径？查看网络服务顺序，分清接入优先级与代理接管，附保留原设置的对照步骤。">
+<meta name="keywords" content="机场推荐,Mac网络服务顺序,Wi-Fi以太网,macOS代理,双网络排障">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.yundandan.cc/posts/mac-network-service-order-proxy-check/">
+<meta property="og:title" content="Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序">
+<meta property="og:description" content="Mac 同时连接 Wi-Fi 与以太网怎样核对机场路径？查看网络服务顺序，分清接入优先级与代理接管，附保留原设置的对照步骤。">
+<meta property="og:url" content="https://www.yundandan.cc/posts/mac-network-service-order-proxy-check/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="云淡淡机场指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.yundandan.cc/assets/media/15ac3777-eb95-4cdb-b4f5-6665dd357cc9.webp"><meta property="og:image:alt" content="Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序">
+<meta name="twitter:description" content="Mac 同时连接 Wi-Fi 与以太网怎样核对机场路径？查看网络服务顺序，分清接入优先级与代理接管，附保留原设置的对照步骤。">
+<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/15ac3777-eb95-4cdb-b4f5-6665dd357cc9.webp"><meta name="twitter:image:alt" content="Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序">
+<meta name="author" content="淡定点"><meta property="article:published_time" content="2026-11-20T09:33:06&#43;08:00"><meta property="article:modified_time" content="2026-11-20T09:33:10&#43;08:00"><meta property="article:tag" content="网络测速"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/mac-network-service-order-proxy-check/#article","@type":"BlogPosting","author":{"@type":"Person","name":"淡定点"},"dateModified":"2026-11-20T09:33:10+08:00","datePublished":"2026-11-20T09:33:06+08:00","description":"Mac 同时连接 Wi-Fi 与以太网怎样核对机场路径？查看网络服务顺序，分清接入优先级与代理接管，附保留原设置的对照步骤。","headline":"Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/mac-network-service-order-proxy-check/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/mac-network-service-order-proxy-check/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/mac-network-service-order-proxy-check/","name":"Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序","position":2}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https:\/\/www.yundandan.cc\/posts\/mac-network-service-order-proxy-check\/#article","image":["https://www.yundandan.cc/assets/media/15ac3777-eb95-4cdb-b4f5-6665dd357cc9.webp"]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/search.css"><script defer src="https://www.yundandan.cc/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/skin.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/seo-images.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/home-recommendations-1.0.6.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/ios-glass-1.0.6.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/reader.css">
+<link rel="icon" href="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/artalk.css"><script defer src="https://www.yundandan.cc/assets/theme/artalk.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/theme.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/reader.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/viewer.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.yundandan.cc/assets/theme/interactions.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/seo-enhancements.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HNDQC290C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HNDQC290C');
+</script>
+
+
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/appearance.css">
+<script defer src="https://www.yundandan.cc/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-9HNDQC290C" data-site-hosts="www.yundandan.cc"></script></head>
+
+<body class="reader-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://www.yundandan.cc/"><img src="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.yundandan.cc/">首页</a><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">新手起步</a><a href="https://www.yundandan.cc/categories/buying-guide/">选购指南</a><a href="https://www.yundandan.cc/categories/registration/">注册上手</a><a href="https://www.yundandan.cc/categories/clients/">客户端</a><a href="https://www.yundandan.cc/categories/network-experience/">网络体验</a><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></nav>
+<a class="search-toggle" href="https://www.yundandan.cc/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章</div>
+<h1 data-pagefind-meta="title">Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序</h1>
+<div class="metadata" data-pagefind-ignore><span>淡定点</span><time datetime="2026-11-20T09:33:06&#43;08:00">2026-11-20</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.yundandan.cc/categories/network-experience/">网络体验</a></div>
+</header>
+<div class="prose"><p>Mac 插着网线，Wi-Fi 也保持连接，不能仅凭插线动作就说所有机场流量已经改走有线。先看系统采用的网络服务顺序，再确认客户端使用系统代理、应用内代理还是 VPN/TUN 等方式接管。两层分别核对，才不会把接入变化误当节点变化。</p>
+<h2 id="heading">服务顺序决定的是哪一层</h2>
+<p>Apple 说明，多种网络服务同时活跃时，Mac 会按列表顺序尝试连接；可以在网络设置中调整服务顺序。VPN 连接的优先级另有规则，不能像普通服务一样随意重排。<a href="https://support.apple.com/en-au/guide/mac-help/mchlp2711/26/mac/26">Apple 网络服务顺序说明</a>。</p>
+<p>这个设置不能直接证明某个应用实际采用哪条代理路由，也不代表两条接入带宽自动相加。当前连接、应用行为与客户端接管方式仍需分别验证。</p>
+<p><img src="https://www.yundandan.cc/assets/media/15ac3777-eb95-4cdb-b4f5-6665dd357cc9.webp" alt="同一台电脑旁的有线和无线接入排列在不同位置，代理隧道作为另一层独立显示"></p>
+<p>示意图：接入服务的优先顺序与代理接管属于不同层；图不承诺自动叠加带宽或无缝切换。</p>
+<h2 id="heading-1">改动前先留下可恢复的信息</h2>
+<p>记录当前网络服务名称、连接状态与原顺序，以及客户端选择的节点和接管方式。不要在远程协助、会议或传输途中试验断开接入。受单位管理的网络遵守其管理要求，不自行删除服务或描述文件。</p>
+<p>如果经常需要在家与办公环境采用不同条件，可了解 macOS 的网络位置来保存不同设置；它不是今天必须新增的步骤。<a href="https://support.apple.com/en-us/105129">Apple 网络位置说明</a>。</p>
+<h2 id="heading-2">查看顺序后，用两轮小任务检查</h2>
+<ol>
+<li>打开“系统设置 → 网络”，查看 Wi-Fi 与以太网是否确实连接，区分已连接和只是列在服务中。</li>
+<li>在操作菜单中查找“设定服务顺序”并记录原列表。菜单名称与位置按当前系统界面为准。</li>
+<li>仅在允许的环境调整一次顺序，保持客户端、节点与目标任务不变，完成一个小页面请求。</li>
+<li>如仍无法确认接入，可在不中断重要任务的条件下暂时停用其中一种接入再复测，并记录操作。</li>
+<li>按需要恢复原连接与顺序，重新完成原任务。</li>
+</ol>
+<p>查看顺序是线索；“切到单一接入后原任务怎样变化”才是一份可比较的观察。已有连接可能需要应用重新发起请求，因此不要只看一个一直未重载的页面。</p>
+<h2 id="heading-3">系统代理要进入对应服务核对</h2>
+<p>若使用 macOS 系统代理，Apple 的设置流程是先选网络服务，再进入代理选项。<a href="https://support.apple.com/en-gb/guide/mac-help/mchlp2591/mac">Apple 代理设置说明</a>。Wi-Fi 的配置正确，不能替以太网配置作确认。应用内代理和其他接管方式则按客户端正式说明检查。</p>
+<table>
+<thead>
+<tr>
+<th>检查层</th>
+<th>记录内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接入</td>
+<td>当前启用的服务、原顺序、单接入对照</td>
+</tr>
+<tr>
+<td>代理</td>
+<td>接管方式、实际入口、节点与相关连接记录</td>
+</tr>
+<tr>
+<td>任务</td>
+<td>同一页面能否打开、错误文字与时间</td>
+</tr>
+</tbody>
+</table>
+<p>公网出口 IP 相同不一定证明接入没有变化，因为两种接入可能最终走同一代理出口；出口不同也不能单独说明哪种接入更快。若比较性能，需要固定任务、顺序和采样条件，另外记录。</p>
+<h2 id="heading-4">怎样算排查结束</h2>
+<p>能够说清本次测试启用了什么接入、调整了哪一项、原任务是否恢复，并把不再需要的临时改动恢复。机场推荐的多端或多网络体验，应记录真实接入条件，不能仅写“Mac 能用”。</p>
+<h2 id="heading-5">来源与核验日期</h2>
+<ul>
+<li><a href="https://support.apple.com/en-au/guide/mac-help/mchlp2711/26/mac/26">Apple：更改 Mac 网络服务顺序</a></li>
+<li><a href="https://support.apple.com/en-us/105129">Apple：使用网络位置</a></li>
+<li><a href="https://support.apple.com/en-gb/guide/mac-help/mchlp2591/mac">Apple：更改代理设置</a></li>
+</ul>
+<p>官方资料核验日期：2026-11-20。本文提供操作与记录方法，不含虚构测速结果。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.yundandan.cc/tags/network-test/"># 网络测速</a><a href="https://www.yundandan.cc/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">服务顺序决定的是哪一层</a><a class="level-2" href="#heading-1">改动前先留下可恢复的信息</a><a class="level-2" href="#heading-2">查看顺序后，用两轮小任务检查</a><a class="level-2" href="#heading-3">系统代理要进入对应服务核对</a><a class="level-2" href="#heading-4">怎样算排查结束</a><a class="level-2" href="#heading-5">来源与核验日期</a></nav></aside>
+<aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/a5235637-d88c-4eac-984a-ea7aff526fc6.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async" width="150" height="150">
+<div class="ad-copy"><h3>FlyBit</h3>
+<p>由此开启，下一程连接</p>
+</div>
+</a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/42757820-e5e0-43f5-adcb-95a95accc72b.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async" width="147" height="150">
+<div class="ad-copy"><h3>99吧</h3>
+<p>探索更多，连接更多可能</p>
+</div>
+</a></aside></div>
+
+</main>
+
+<footer class="site-footer">
+<nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav>
+<span>© 2026 云淡淡机场指南</span>
+</footer>
+
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.yundandan.cc/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.yundandan.cc/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.yundandan.cc/pagefind/" base-url="https://www.yundandan.cc/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/2cd7e041-0f7f-457e-9e25-2e3acb1ca63a/","pageTitle":"Mac 同时连 Wi-Fi 和网线，机场走哪边？先查网络服务顺序","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+
+</body></html>
