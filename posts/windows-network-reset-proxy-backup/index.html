@@ -14,14 +14,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="云淡淡机场指南">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.yundandan.cc/assets/media/c6d1b822-b219-492d-a93e-b08490dfb753.webp"><meta property="og:image:alt" content="Windows 网络重置会影响机场客户端吗？先准备恢复清单">
+<meta property="og:image" content="https://www.yundandan.cc/assets/media/79ae03ef-4135-4482-a7b0-c8687f68f10d.png"><meta property="og:image:alt" content="Windows 网络重置会影响机场客户端吗？先准备恢复清单">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Windows 网络重置会影响机场客户端吗？先准备恢复清单">
 <meta name="twitter:description" content="Windows 机场连接异常时，网络重置前应该保存什么？本文说明适用条件、订阅与网络恢复清单，以及重启后的三层验收顺序。">
-<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/c6d1b822-b219-492d-a93e-b08490dfb753.webp"><meta name="twitter:image:alt" content="Windows 网络重置会影响机场客户端吗？先准备恢复清单">
-<meta name="author" content="淡定点"><meta property="article:published_time" content="2026-11-19T09:25:58&#43;08:00"><meta property="article:modified_time" content="2026-11-19T09:26:03&#43;08:00"><meta property="article:tag" content="订阅链接"><meta property="article:tag" content="故障排查">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/#article","@type":"BlogPosting","author":{"@type":"Person","name":"淡定点"},"dateModified":"2026-11-19T09:26:03+08:00","datePublished":"2026-11-19T09:25:58+08:00","description":"Windows 机场连接异常时，网络重置前应该保存什么？本文说明适用条件、订阅与网络恢复清单，以及重启后的三层验收顺序。","headline":"Windows 网络重置会影响机场客户端吗？先准备恢复清单","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/","name":"Windows 网络重置会影响机场客户端吗？先准备恢复清单","position":2}]}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https:\/\/www.yundandan.cc\/posts\/windows-network-reset-proxy-backup\/#article","image":["https://www.yundandan.cc/assets/media/c6d1b822-b219-492d-a93e-b08490dfb753.webp"]}</script>
+<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/79ae03ef-4135-4482-a7b0-c8687f68f10d.png"><meta name="twitter:image:alt" content="Windows 网络重置会影响机场客户端吗？先准备恢复清单">
+<meta name="author" content="淡定点"><meta property="article:published_time" content="2026-11-19T09:25:58&#43;08:00"><meta property="article:modified_time" content="2026-11-22T23:12:41&#43;08:00"><meta property="article:tag" content="订阅链接"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/#article","@type":"BlogPosting","author":{"@type":"Person","name":"淡定点"},"dateModified":"2026-11-22T23:12:41+08:00","datePublished":"2026-11-19T09:25:58+08:00","description":"Windows 机场连接异常时，网络重置前应该保存什么？本文说明适用条件、订阅与网络恢复清单，以及重启后的三层验收顺序。","headline":"Windows 网络重置会影响机场客户端吗？先准备恢复清单","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/windows-network-reset-proxy-backup/","name":"Windows 网络重置会影响机场客户端吗？先准备恢复清单","position":2}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https:\/\/www.yundandan.cc\/posts\/windows-network-reset-proxy-backup\/#article","image":["https://www.yundandan.cc/assets/media/79ae03ef-4135-4482-a7b0-c8687f68f10d.png"]}</script>
 
 <script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/style.css">
@@ -92,7 +92,7 @@
 <h2 id="heading">先判断是否需要走到这一步</h2>
 <p>Microsoft 将网络重置放在较后的排障步骤：它会移除已安装的网络适配器及其设置，重启后重新安装适配器并恢复默认设置；VPN 客户端或虚拟交换机等软件可能需要重新设置。<a href="https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows">Microsoft 连接排障说明</a>。</p>
 <p>先记录故障范围：不启用机场时是否能访问普通网页，是否只有一个软件失败，另一台设备在相同 Wi-Fi 下怎样。若基础联网正常、只有某个节点或某个账号失败，先沿着该具体问题核对，避免把系统级恢复当成通用答案。</p>
-<p><img src="https://www.yundandan.cc/assets/media/c6d1b822-b219-492d-a93e-b08490dfb753.webp" alt="笔记本网络重置按钮前放着备份文件夹，重启后依次恢复本地网络与代理连接"></p>
+<p><img src="https://www.yundandan.cc/assets/media/79ae03ef-4135-4482-a7b0-c8687f68f10d.png" alt="笔记本网络重置按钮前放着备份文件夹，重启后依次恢复本地网络与代理连接"></p>
 <p>示意图：先准备恢复资料，再按本地联网与代理连接分层检查；不是 Windows 操作界面。</p>
 <h2 id="heading-1">重置前保留四组资料</h2>
 <table>
