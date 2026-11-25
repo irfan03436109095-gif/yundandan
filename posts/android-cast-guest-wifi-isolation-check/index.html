@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="cloud-journal-seo">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离 · 云淡淡机场指南</title>
+<meta name="description" content="安卓手机上网正常却搜不到电视？用同一家庭 Wi-Fi 和单变量对照排查 Google Cast，分清访客网络隔离、设备发现和播放失败。">
+<meta name="keywords" content="安卓Google Cast,访客Wi-Fi隔离,投屏找不到电视,机场客户端排障">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.yundandan.cc/posts/android-cast-guest-wifi-isolation-check/">
+<meta property="og:title" content="安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离">
+<meta property="og:description" content="安卓手机上网正常却搜不到电视？用同一家庭 Wi-Fi 和单变量对照排查 Google Cast，分清访客网络隔离、设备发现和播放失败。">
+<meta property="og:url" content="https://www.yundandan.cc/posts/android-cast-guest-wifi-isolation-check/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="云淡淡机场指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.yundandan.cc/assets/media/ada1c8de-2124-42de-aeb3-7b2431503617.webp"><meta property="og:image:alt" content="安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离">
+<meta name="twitter:description" content="安卓手机上网正常却搜不到电视？用同一家庭 Wi-Fi 和单变量对照排查 Google Cast，分清访客网络隔离、设备发现和播放失败。">
+<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/ada1c8de-2124-42de-aeb3-7b2431503617.webp"><meta name="twitter:image:alt" content="安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离">
+<meta name="author" content="淡定点"><meta property="article:published_time" content="2026-11-25T09:21:32&#43;08:00"><meta property="article:modified_time" content="2026-11-25T09:21:42&#43;08:00"><meta property="article:tag" content="故障排查"><meta property="article:tag" content="代理分流">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/android-cast-guest-wifi-isolation-check/#article","@type":"BlogPosting","author":{"@type":"Person","name":"淡定点"},"dateModified":"2026-11-25T09:21:42+08:00","datePublished":"2026-11-25T09:21:32+08:00","description":"安卓手机上网正常却搜不到电视？用同一家庭 Wi-Fi 和单变量对照排查 Google Cast，分清访客网络隔离、设备发现和播放失败。","headline":"安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/android-cast-guest-wifi-isolation-check/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/android-cast-guest-wifi-isolation-check/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/android-cast-guest-wifi-isolation-check/","name":"安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离","position":2}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https:\/\/www.yundandan.cc\/posts\/android-cast-guest-wifi-isolation-check\/#article","image":["https://www.yundandan.cc/assets/media/ada1c8de-2124-42de-aeb3-7b2431503617.webp"]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/search.css"><script defer src="https://www.yundandan.cc/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/skin.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/seo-images.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/home-recommendations-1.0.6.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/ios-glass-1.0.6.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/reader.css">
+<link rel="icon" href="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/artalk.css"><script defer src="https://www.yundandan.cc/assets/theme/artalk.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/theme.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/reader.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/viewer.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.yundandan.cc/assets/theme/interactions.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/seo-enhancements.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HNDQC290C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HNDQC290C');
+</script>
+
+
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/appearance.css">
+<script defer src="https://www.yundandan.cc/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-9HNDQC290C" data-site-hosts="www.yundandan.cc"></script></head>
+
+<body class="reader-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://www.yundandan.cc/"><img src="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.yundandan.cc/">首页</a><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">新手起步</a><a href="https://www.yundandan.cc/categories/buying-guide/">选购指南</a><a href="https://www.yundandan.cc/categories/registration/">注册上手</a><a href="https://www.yundandan.cc/categories/clients/">客户端</a><a href="https://www.yundandan.cc/categories/network-experience/">网络体验</a><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></nav>
+<a class="search-toggle" href="https://www.yundandan.cc/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章</div>
+<h1 data-pagefind-meta="title">安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离</h1>
+<div class="metadata" data-pagefind-ignore><span>淡定点</span><time datetime="2026-11-25T09:21:32&#43;08:00">2026-11-25</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></div>
+</header>
+<div class="prose"><p>安卓手机刷网页没问题，打开支持 Google Cast 的应用却看不到客厅电视。别急着换机场节点。<strong>能上网和能在局域网发现电视是两件不同的事</strong>，尤其当手机连了访客网、电视留在家庭主网时。以下针对 Google Cast，不适用于所有品牌的屏幕镜像协议。</p>
+<h2 id="heading">先在同一个可信网络找电视</h2>
+<ol>
+<li>确认电视或接收器支持 Google Cast，并打开手机上原本支持投屏的应用。若这个应用从来没有投屏入口，先做兼容性确认，不在客户端里找不存在的开关。</li>
+<li>在安卓和电视各自的网络设置里核对正在连接的 Wi-Fi。自家网络可先让二者都接入同一个有权限使用的家庭主网。访客 Wi-Fi、酒店 Wi-Fi 或扩展器上的客户端隔离，可能允许上网却不允许设备互相通信。</li>
+<li>在手机应用里打开 Cast 设备列表，记“能看到电视／看不到”。能看到后再播同一段短片，记“能播放／选中后失败”。第二种失败不是第一种，排查时要分开。</li>
+</ol>
+<p><img src="https://www.yundandan.cc/assets/media/ada1c8de-2124-42de-aeb3-7b2431503617.webp" alt="家庭网络中手机能发现电视，隔开的访客网络中手机仍能上网但找不到电视"></p>
+<p>示意图：两部设备都能上网，不等于它们能在局域网里互相发现。</p>
+<h2 id="heading-1">再只改变机场客户端状态</h2>
+<p>用同一个家庭 Wi-Fi、同一部手机、同一个应用做两次：一次保持现有机场连接，一次仅在许可的个人环境下暂时断开它，重新打开设备列表。不要同时换网络和节点。两次都找不到电视，优先查电视联网、应用支持和家中设备能否互相发现；只有关闭客户端才找得到，再看客户端是否有明确的局域网访问设置，逐项核对并恢复原状。能找到但播不出时，改用已确认可播放的短片对照，不把播放端联网故障当作“搜不到设备”。</p>
+<h2 id="heading-2">最小改动就是有用的验收</h2>
+<p>记录手机网络、电视网络、机场状态、列表是否显示和能否播放五项。若机构或访客网有意隔离设备，用允许投屏的专用或家庭网络，不去解除不属于你的隔离策略。若只有自家访客网失败，家庭主网稳定通过，已经足以给出有价值的结论：在该环境中，先选对局域网，比换机场更有用。</p>
+<p>资料核验于 2026-11-25：<a href="https://support.google.com/chromecast/answer/3006709?hl=en">Google Cast：从支持的应用投屏</a>、<a href="https://support.google.com/chromecast/answer/7300406?hl=en">Google：排查 AP 或客户端隔离</a>、<a href="https://support.google.com/chromecast/answer/9216542?hl=en">Google 流媒体设备网络安全提示</a>。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.yundandan.cc/tags/troubleshooting/"># 故障排查</a><a href="https://www.yundandan.cc/tags/routing/"># 代理分流</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://www.yundandan.cc/posts/windows-wlanreport-airport-disconnect-timeline/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先在同一个可信网络找电视</a><a class="level-2" href="#heading-1">再只改变机场客户端状态</a><a class="level-2" href="#heading-2">最小改动就是有用的验收</a></nav></aside>
+<aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/a5235637-d88c-4eac-984a-ea7aff526fc6.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async" width="150" height="150">
+<div class="ad-copy"><h3>FlyBit</h3>
+<p>由此开启，下一程连接</p>
+</div>
+</a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/42757820-e5e0-43f5-adcb-95a95accc72b.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async" width="147" height="150">
+<div class="ad-copy"><h3>99吧</h3>
+<p>探索更多，连接更多可能</p>
+</div>
+</a></aside></div>
+
+</main>
+
+<footer class="site-footer">
+<nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav>
+<span>© 2026 云淡淡机场指南</span>
+</footer>
+
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.yundandan.cc/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.yundandan.cc/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.yundandan.cc/pagefind/" base-url="https://www.yundandan.cc/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/8a32179c-b0a0-43f4-9c80-99460362f0b4/","pageTitle":"安卓开着机场却搜不到电视？Google Cast 先查访客 Wi-Fi 隔离","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+
+</body></html>
