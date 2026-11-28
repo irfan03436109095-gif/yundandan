@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="cloud-journal-seo">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网 · 云淡淡机场指南</title>
+<meta name="description" content="Windows 11 公网正常但打不开局域网共享？按网络位置、已知路径、发现设置和账户权限排查，不关闭防火墙。">
+<meta name="keywords" content="Windows 11 局域网共享,网络发现,公用和专用网络,机场连接排查">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.yundandan.cc/posts/windows-11-lan-share-public-private-profile/">
+<meta property="og:title" content="机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网">
+<meta property="og:description" content="Windows 11 公网正常但打不开局域网共享？按网络位置、已知路径、发现设置和账户权限排查，不关闭防火墙。">
+<meta property="og:url" content="https://www.yundandan.cc/posts/windows-11-lan-share-public-private-profile/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="云淡淡机场指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.yundandan.cc/assets/media/f23b93f5-cc80-4b4f-82a7-b5578343ba2a.webp"><meta property="og:image:alt" content="机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网">
+<meta name="twitter:description" content="Windows 11 公网正常但打不开局域网共享？按网络位置、已知路径、发现设置和账户权限排查，不关闭防火墙。">
+<meta name="twitter:image" content="https://www.yundandan.cc/assets/media/f23b93f5-cc80-4b4f-82a7-b5578343ba2a.webp"><meta name="twitter:image:alt" content="机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网">
+<meta name="author" content="淡定点"><meta property="article:published_time" content="2026-11-27T09:24:13&#43;08:00"><meta property="article:modified_time" content="2026-11-27T09:24:18&#43;08:00"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.yundandan.cc/posts/windows-11-lan-share-public-private-profile/#article","@type":"BlogPosting","author":{"@type":"Person","name":"淡定点"},"dateModified":"2026-11-27T09:24:18+08:00","datePublished":"2026-11-27T09:24:13+08:00","description":"Windows 11 公网正常但打不开局域网共享？按网络位置、已知路径、发现设置和账户权限排查，不关闭防火墙。","headline":"机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.yundandan.cc/posts/windows-11-lan-share-public-private-profile/","@type":"WebPage"},"url":"https://www.yundandan.cc/posts/windows-11-lan-share-public-private-profile/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.yundandan.cc/","name":"云淡淡机场指南","position":1},{"@type":"ListItem","item":"https://www.yundandan.cc/posts/windows-11-lan-share-public-private-profile/","name":"机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网","position":2}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https:\/\/www.yundandan.cc\/posts\/windows-11-lan-share-public-private-profile\/#article","image":["https://www.yundandan.cc/assets/media/f23b93f5-cc80-4b4f-82a7-b5578343ba2a.webp"]}</script>
+
+<script>(()=>{let mode='system';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/search.css"><script defer src="https://www.yundandan.cc/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/skin.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/seo-images.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/home-recommendations-1.0.6.css"><link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/ios-glass-1.0.6.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/reader.css">
+<link rel="icon" href="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp">
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/artalk.css"><script defer src="https://www.yundandan.cc/assets/theme/artalk.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/theme.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/reader.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/viewer.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.yundandan.cc/assets/theme/interactions.js"></script>
+<script defer src="https://www.yundandan.cc/assets/theme/seo-enhancements.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HNDQC290C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HNDQC290C');
+</script>
+
+
+<link rel="stylesheet" href="https://www.yundandan.cc/assets/theme/appearance.css">
+<script defer src="https://www.yundandan.cc/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-9HNDQC290C" data-site-hosts="www.yundandan.cc"></script></head>
+
+<body class="reader-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="https://www.yundandan.cc/"><img src="https://www.yundandan.cc/assets/media/388945f5-21b6-4551-a410-76729694a13e.webp" alt="" width="38" height="38"><span>云淡淡机场指南</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.yundandan.cc/">首页</a><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">新手起步</a><a href="https://www.yundandan.cc/categories/buying-guide/">选购指南</a><a href="https://www.yundandan.cc/categories/registration/">注册上手</a><a href="https://www.yundandan.cc/categories/clients/">客户端</a><a href="https://www.yundandan.cc/categories/network-experience/">网络体验</a><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></nav>
+<a class="search-toggle" href="https://www.yundandan.cc/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮">
+<svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+<svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+<svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+<svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+</button>
+</div>
+</header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.yundandan.cc/">云淡淡机场指南</a></li><li><span aria-current="page">机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章</div>
+<h1 data-pagefind-meta="title">机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网</h1>
+<div class="metadata" data-pagefind-ignore><span>淡定点</span><time datetime="2026-11-27T09:24:13&#43;08:00">2026-11-27</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.yundandan.cc/categories/troubleshooting/">排障手册</a></div>
+</header>
+<div class="prose"><p>开着机场时浏览器能上网，文件资源管理器的“网络”列表却没有家里的共享电脑。网页通不通，和当前电脑能否找到或读取同一局域网内的共享文件，是两项测试。先准备一个自己有权限的现有共享和一份测试文件，不需要用私密目录来排查。</p>
+<p><img src="https://www.yundandan.cc/assets/media/f23b93f5-cc80-4b4f-82a7-b5578343ba2a.webp" alt="家中两台电脑通过路由器连接共享文件夹，另一条连线通向屋外的云"></p>
+<p><em>示意图。访问公网与打开家里另一台设备的文件夹，走的是两个不同的检查目标。</em></p>
+<h2 id="heading">先试已知路径，不只看设备列表</h2>
+<p>确认共享主机开机，双方连的确实是同一个可信家庭网，不是一台在访客 Wi-Fi、另一台在主网。然后在访问方打开文件资源管理器，在地址栏输入已经知道的共享路径，例如 <code>\\PC-NAME\TestShare</code>。这是示例，请换成自己的设备名和共享名。</p>
+<table>
+<thead>
+<tr>
+<th>同一份共享的结果</th>
+<th>优先核对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>列表里没设备，但路径能打开</td>
+<td>先查网络发现；共享连接本身已经可用。</td>
+</tr>
+<tr>
+<td>打开路径出现登录提示或拒绝访问</td>
+<td>主机已经能回应，检查指定账户和该共享的读取权限，不把目录开放给所有人。</td>
+</tr>
+<tr>
+<td>路径也不起作用</td>
+<td>检查主机在线、共享名、同网条件以及主机的网络配置文件；不从一次报错猜测线路问题。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="heading-1">只在需要共享的可信家庭网络调整配置</h2>
+<p>Windows 11 新接入的网络通常设为公用，这是默认建议。如果你要在自己的家庭网络<strong>提供</strong>文件夹共享，到共享主机的“设置 → 网络和 Internet”，打开当前 Wi-Fi 属性或以太网，确认该可信网络是否应使用“专用”。在“高级共享设置”里只查看与该专用网络有关的网络发现、文件和打印机共享项：需要设备出现在列表才考虑开启发现；提供文件共享只授权给实际需要的用户。酒店和咖啡馆维持公用；单位设备按管理员设置。不关防火墙，不关闭密码保护共享。</p>
+<h2 id="heading-2">用同一条路径验收</h2>
+<p>在访问方重新打开同一路径，确认指定账户能读到测试文件；只有你确实需要从列表查找时，再验收“网络”列表。若同一网络里只有在客户端某个模式下访问失败，先记下模式与对应结果，再让客户端文档或管理员确认它是否管到局域网访问，不同时改多项设置。测试完成，取消不再需要的共享。</p>
+<h2 id="heading-3">来源与核验日期</h2>
+<p>资料核验日期为 2026-11-27（北京时间）。</p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/windows/experience/connectivity-networking/file-sharing-over-a-network-in-windows">微软支持：Windows 局域网文件共享与网络发现</a></li>
+<li><a href="https://support.microsoft.com/en-gb/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows">微软支持：Windows 公用与专用网络配置文件</a></li>
+</ul>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.yundandan.cc/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.yundandan.cc/posts/airport-choice-needs-card/">← 上一篇</a><a href="https://www.yundandan.cc/posts/windows-metered-phone-hotspot-proxy-check/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先试已知路径，不只看设备列表</a><a class="level-2" href="#heading-1">只在需要共享的可信家庭网络调整配置</a><a class="level-2" href="#heading-2">用同一条路径验收</a><a class="level-2" href="#heading-3">来源与核验日期</a></nav></aside>
+<aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/a5235637-d88c-4eac-984a-ea7aff526fc6.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async" width="150" height="150">
+<div class="ad-copy"><h3>FlyBit</h3>
+<p>由此开启，下一程连接</p>
+</div>
+</a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.yundandan.cc/assets/media/42757820-e5e0-43f5-adcb-95a95accc72b.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async" width="147" height="150">
+<div class="ad-copy"><h3>99吧</h3>
+<p>探索更多，连接更多可能</p>
+</div>
+</a></aside></div>
+
+</main>
+
+<footer class="site-footer">
+<nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav>
+<span>© 2026 云淡淡机场指南</span>
+</footer>
+
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.yundandan.cc/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.yundandan.cc/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.yundandan.cc/pagefind/" base-url="https://www.yundandan.cc/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/8423f94c-73f0-4740-b508-7fc9116290d3/","pageTitle":"机场能打开网页，Windows 11 却看不到家里的共享？分开查局域网","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-26a911ac-11d7-4bb2-b8c8-69961589ef8a","views":true,"viewsBase":0}</script>
+
+</body></html>
